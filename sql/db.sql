@@ -14,3 +14,23 @@ CREATE TABLE IF NOT EXISTS user_info(
 );
 
 ALTER TABLE user_info ADD COLUMN active BOOLEAN;
+
+CREATE TABLE IF NOT EXISTS product_table (
+    ID INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    NAME VARCHAR(255),
+    PRICE INT (255)
+
+);
+
+INSERT INTO product_table (name, price, id) VALUES
+('Razer Laptop','100',1),
+('HP Notebook','299',2),
+('Lenovo Laptop','399',3),
+('Predator Laptop','499',4);
+
+
+ALTER TABLE product_table ADD COLUMN pic_url VARCHAR(255);
+UPDATE product_table SET pic_url = 'images/razerlaptop1.png' WHERE id = 1;
+UPDATE product_table SET pic_url = 'images/omenlaptop.png' WHERE id = 2;
+UPDATE product_table SET pic_url = 'images/lenovolaptop.png' WHERE id = 3;
+UPDATE product_table SET pic_url = 'images/predatorlaptop.png' WHERE id = 4;

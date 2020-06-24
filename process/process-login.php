@@ -32,7 +32,7 @@ require_once('../resources/db-properties.php');
     if ($result->fetch_assoc()) {
       $_SESSION['username'] = $username;
       //if there something fetched redirected to the location
-      header('Location: ../login-page.php');
+      header('Location: ../index.php');
     }else {
       //if none throw exception
       throw new Exception('Incorrect Credentials');

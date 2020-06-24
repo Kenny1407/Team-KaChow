@@ -55,9 +55,6 @@
        <?php } ?>
      </form>
 
-     <div class="">
-
-     </div>
 
      <div class="container" style="width: 30%; height:560px; border-style:ridge; background-color: white; padding: 5px; margin-right: 50px; float:right;">
        <div class="card-title">
