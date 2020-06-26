@@ -55,8 +55,7 @@
        <?php } ?>
      </form>
 
-
-     <div class="container" style="width: 30%; height:560px; border-style:ridge; background-color: white; padding: 5px; margin-right: 50px; float:right;">
+     <div class="container" style="width: 30%; height:640px; border-style:ridge; background-color: white; padding: 5px; margin-right: 50px; float:right;">
        <div class="card-title">
          <center><h2>No Account Yet?</h2>
          <h4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSign up now!</h4>
@@ -67,6 +66,10 @@
              <div class="form-group" style="text-align:center;">
                <label for=""><b>Username:  </b></label>
                <input class="form-control "type="text" name="username" id="username" placeholder="Username" required autofocus style="text-align:center;">
+             </div>
+             <div class="form-group" style="text-align:center;">
+               <label for="">Email: <b/></label>
+                <input class="form-control "type="text" name="email" id="email" placeholder="Email Address" required autofocus style="text-align:center;">
              </div>
              <div class="form-group" style="text-align:center;">
                <label for=""><b>Password:  </b></label>

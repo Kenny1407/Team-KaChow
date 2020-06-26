@@ -15,12 +15,14 @@
           </div>
           <div class="card-body">
             <?php
+
               //get the value of the input from the register form
               $username = $_POST['username'];
               $password = $_POST['password'];
               $firstname = $_POST['firstname'];
               $lastname = $_POST['lastname'];
               $middlename = $_POST['middlename'];
+              $email = $_POST['email'];
 
               // checking if the input is complete or no
               try {
@@ -37,17 +39,26 @@
                 }
                   //inserting new registered user to db
                   // must be the name name in the db.sql
-                $query = "insert into user_info (USERNAME, PASSWORD, FIRST_NAME, LAST_NAME, MIDDLE_NAME, active) values (?,?,?,?,?,?)";
+                $query = "insert into user_info (USERNAME, PASSWORD, FIRST_NAME, LAST_NAME, MIDDLE_NAME,EMAIL_ADDRESS ,active) values (?,?,?,?,?,?,?)";
                 $stmt = $db->prepare($query);
                 //hashed password
                 $hasedPassword = hash('sha512', $password);
                 $isActive = true;
-                $stmt->bind_param("sssssi", $username, $hasedPassword,$firstname, $lastname, $middlename, $isActive);
-                $stmt->execute();
-                echo '<p><center><font size="10">You have successfully registered a new account!</font></center></p>';
-                echo '<p><center>You can now sign-in! </center></p>';
-                echo '<center><i class="fas fa-check-circle fa-7x" style="color:green"></i></center>';
+                $stmt->bind_param("ssssssi", $username, $hasedPassword,$firstname, $lastname, $middlename, $email,$isActive);
+                if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                  $stmt->execute();
+                  echo '<p><center><font size="10">You have successfully registered a new account!</font></center></p>';
+                  echo '<p><center>You can now sign-in! </center></p>';
+                  echo '<center><i class="fas fa-check-circle fa-7x" style="color:green"></i></center>';
+                } else {
+                  
+                  echo '<script>alert("Invalid Email Address")</script>';
+                  echo '<script>window.location="../front-page.php"</script>';
+                }
+
                 $stmt->close();
+
+
 
               } catch (Exception $e) {
                 echo $e->getMessage();
