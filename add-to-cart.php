@@ -9,8 +9,8 @@
      <div class="table-responsive">
        <table class="table table-bordered">
          <tr>
-           <th width="40%">Item Name</th>
-           <th width= "40%">Image</th>
+           <th width="30%">Item Name</th>
+           <th width= "30%">Image</th>
            <th width="10%">Quantity</th>
            <th width="20%">Price</th>
            <th width="15%">Total</th>
@@ -48,6 +48,7 @@
 
        </table>
        <a class="btn btn-info" href="index.php">Continue shopping</a>
+       <a  class="btn btn-success "href="check-out.php" style="float:right;">Proceed to checkout</a>
      </div>
    </div>
  </div>

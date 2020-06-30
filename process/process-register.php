@@ -51,7 +51,7 @@
                   echo '<p><center>You can now sign-in! </center></p>';
                   echo '<center><i class="fas fa-check-circle fa-7x" style="color:green"></i></center>';
                 } else {
-                  
+
                   echo '<script>alert("Invalid Email Address")</script>';
                   echo '<script>window.location="../front-page.php"</script>';
                 }

@@ -91,14 +91,11 @@ if(isset($_GET["action"]))
      for ($ctr = 0; $ctr < $resultCount; $ctr++) {
        $row = $result -> fetch_assoc();
      ?>
-		 <?php
-		 $parameter = $_SERVER['QUERY_STRING'];
 
-		  ?>
      <form method="post" action="product-details.php?id=<?php echo $row["ID"]; ?>">
        <div class="card" style="margin-left:40px; left:30%; border-radius: 30px; border: 5px; border-color:black; border-style:solid; position: auto;">
          <div class="card-body" style="height:450px;">
-          <a href="product-details.php?id=<?php echo $row["ID"]; ?>"><img style="height:300px; width:300px;" src="<?php echo $row ['pic_url']; ?>" width="200 rem" alt="Product" class="img-responsive"></a>
+          <a href="product-details.php?id=<?php echo $row["ID"]; ?>"><img style="height:300px; width:300px;" name= "hidden_image"src="images/<?php echo $row ['pic_url']; ?>" width="200 rem" alt="Product" class="img-responsive"></a>
            <h4 style="text-align:center;" class="text-info"><?php echo $row['NAME'];?></h6>
            <h5 class="text-danger" style="text-align:center;">$ <?php echo $row ['PRICE']; ?></h5>
             <center><input type="submit" style="margin-top: 5px;" class="btn btn-success" value="Product Details"></center>

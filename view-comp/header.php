@@ -1,7 +1,4 @@
-<?php
 
-
- ?>
 <?php
   session_start();
 // if the user accidentally or intentionally go to the log-in page without logging in, they will be redicrect to the front page again and an error will appear
@@ -11,10 +8,14 @@
   }
 
   //https secure
-  if (@$_SERVER['HTTPS'] == 'on') {
-    header ('Location: http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
-    exit;
-  }
+  // if (@$_SERVER['HTTPS'] == 'on') {
+  //   header ('Location: http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
+  //   exit;
+    if (@$_SERVER['HTTPS'] != 'on') {
+      header ('Location: https://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
+      exit;
+    }
+  //}
  ?>
 
 <html>
@@ -25,7 +26,7 @@
       integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
       <script src="https://kit.fontawesome.com/6e896293bb.js" crossorigin="anonymous"></script>
-      <link rel="stylesheet" href="css/product-page.css">
+
 
   </head>
     <body>

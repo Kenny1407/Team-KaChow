@@ -84,16 +84,18 @@ if(isset($_GET["action"]))
        $row = $result -> fetch_assoc();
      ?>
      <form method="post" action="product-details.php?action=add&id=<?php echo $row["ID"]; ?>">
-       <div class="card" style="margin-left:40px; left:30%; border-radius: 30px; border: 5px; border-color:black; border-style:solid; position: auto;">
-         <div class="card-body" style="height:500px;">
-          <img style="height:300px; width:300px;" src="<?php echo $row ['pic_url']; ?>" width="200 rem" alt="Product" class="img-responsive">
+       <div class="card" style="margin-left:40px; left:150%; top: 50;border-radius: 30px; border: 5px; border-color:black; border-style:solid; position: auto;">
+         <div class="card-body" style="height:550px;">
+          <img style="height:300px; width:300px;" src="images/<?php echo $row ['pic_url']; ?>" width="200 rem" alt="Product" class="img-responsive">
            <h4 style="text-align:center;" class="text-info"><?php echo $row['NAME'];?></h6>
            <h5 class="text-danger" style="text-align:center;">$ <?php echo $row ['PRICE']; ?></h5>
            <input type="number" name="quantity" value="1" class="form-control" minlength="1" maxlength="10">
-           <input type="hidden" name="hidden_image" value="<?php echo $row['pic_url']; ?>">
+           <input type="hidden" name="hidden_image" src="/images<?php echo $row['pic_url']; ?>">
            <input type="hidden" name="hidden_name" value="<?php echo $row['NAME']; ?>">
            <input type="hidden" name="hidden_price" value="<?php echo $row['PRICE']; ?>">
-           <center><input type="submit" name="add_to_cart" style="margin-top: 5px;" class="btn btn-success" value="Add to cart"></center>
+           <center><input type="submit" name="add_to_cart" style="margin-top: 5px;" class="btn btn-warning" value="Add to cart"></center>
+           <br>
+           <center><a href="index.php" class="btn btn-info">Go Back</a></center>
          </div>
        </div>
      </form>
@@ -105,8 +107,6 @@ if(isset($_GET["action"]))
    }
  ?>
 
-
- ?>
 
  <?php
  require_once('view-comp/footer.php');

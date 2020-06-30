@@ -11,7 +11,11 @@ CREATE TABLE IF NOT EXISTS user_info(
   FIRST_NAME VARCHAR (255),
   LAST_NAME VARCHAR (255),
   MIDDLE_NAME VARCHAR (255),
-  EMAIL_ADDRESS VARCHAR (255)
+  EMAIL_ADDRESS VARCHAR (255),
+  ADDRESS VARCHAR (255),
+  CITY VARCHAR (255),
+  PROVINCE VARCHAR (255),
+  ZIP INT (255)
 );
 
 ALTER TABLE user_info ADD COLUMN active BOOLEAN;
@@ -31,7 +35,7 @@ INSERT INTO product_table (name, price, id) VALUES
 
 
 ALTER TABLE product_table ADD COLUMN pic_url VARCHAR(255);
-UPDATE product_table SET pic_url = 'images/razerlaptop1.png' WHERE id = 1;
-UPDATE product_table SET pic_url = 'images/omenlaptop.png' WHERE id = 2;
-UPDATE product_table SET pic_url = 'images/lenovolaptop.png' WHERE id = 3;
-UPDATE product_table SET pic_url = 'images/predatorlaptop.png' WHERE id = 4;
+UPDATE product_table SET pic_url = 'razerlaptop1.png' WHERE id = 1;
+UPDATE product_table SET pic_url = 'omenlaptop.png' WHERE id = 2;
+UPDATE product_table SET pic_url = 'lenovolaptop.png' WHERE id = 3;
+UPDATE product_table SET pic_url = 'predatorlaptop.png' WHERE id = 4;
