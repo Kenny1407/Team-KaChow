@@ -22,24 +22,27 @@
       echo '<div class="row">';
       for ($ctr = 0; $ctr < $resultCount; $ctr++) {
         $row = $result -> fetch_assoc();
- ?>
- <link rel="stylesheet" href="css/checkout.css">
- <?php
-       }
-   echo '</div>';
-   } catch (Exception $e) {
-   echo $e->getMessage();
-     }
 ?>
 
+<link rel="stylesheet" href="css/checkout.css">
+
+<?php
+  }
+} catch (Exception $e) {
+echo $e->getMessage();
+}
+?>
+<script type="text/javascript">
 
 
-     <h2>Responsive Checkout Form</h2>
+
+</script>
+
 
      <div class="row">
        <div class="col-75">
          <div class="container">
-           <form action="process/process-checkout.php" method="post">
+
              <div class="row">
 
                <div class="col-50">
@@ -48,9 +51,11 @@
                   <img src="images/codimage2.png" alt="Photo" style="height:70px; margin-left:20px;">
                   <img src="images/creditcard.png" alt="Photo" style="height:90px; margin-left:50px;">
                   <br>
-                <input type="radio" name="radiobutton" id="radiocheck1" style="margin-left:40px;" value="COD">
+                <form action="confirm-checkout.php" method="post">
+                <input type="radio" name="radiobutton" id="radiocheck1"  style="margin-left:40px;" value="COD">
                 <input type="radio" name="radiobutton" id="radiocheck2" style="margin-left:128px;" value="CREDIT">
                   <br>
+                 <form action="process/process-checkout.php" method="post">
                   <span>Cash On Delivery</span>
                   <span style="margin-left:25px;">Credit Card</span>
                 </div>
@@ -61,18 +66,44 @@
                  <label for="email"><i class="fa fa-envelope"></i> Email</label>
                  <input type="text" id="email" name="email" value="<?php echo $row['EMAIL_ADDRESS']; ?>" required="required">
                  <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
-                 <input type="text" id="address" name="address" placeholder="542 W. 15th Street" required="required">
+                 <?php
+                    if(['ADDRESS']==null){
+                      echo '<input type="text" id="address" name="address" placeholder="542 W. 15th Street" required="required">';
+                    } else {
+                      echo '<input type="text" id="address" name="address" placeholder ="542 W. 15th Street" required="required" value="'. $row['ADDRESS'] .'">';
+                    }
+                  ?>
                  <label for="city"><i class="fa fa-institution"></i> City</label>
-                 <input type="text" id="city" name="city" placeholder="Manila" required="required">
+                 <?php
+                    if(['CITY']==null){
+                      echo '<input type="text" id="city" name="city" placeholder="Manila" required="required">';
+                    } else {
+                      echo '<input type="text" id="province" name="province" placeholder ="NCR" required="required" value="'. $row['CITY'] .'">';
+                    }
+                  ?>
 
                  <div class="row">
                    <div class="col-50">
                      <label for="state">Province</label>
-                     <input type="text" id="province" name="province" placeholder="NCR" required="required">
+                     <?php
+                      if(['ADDRESS']==null){
+                        echo '<input type="text" id="province" name="province" placeholder="NCR" required="required">';
+                      }else {
+                        echo '<input type="text" id="province" name="province" placeholder ="NCR" required="required" value="'. $row['ADDRESS'] .'">';
+                      }
+                      ?>
+
                    </div>
                    <div class="col-50">
                      <label for="zip">Zip</label>
-                     <input type="text" id="zip" name="zip" placeholder="10001" required="required">
+                     <?php
+                      if(['ZIP']==null){
+                        echo '<input type="text" id="zip" name="zip" placeholder="10001" required="required">';
+                      }else {
+                        echo '<input type="text" id="province" name="province" placeholder ="NCR" required="required" value="'. $row['ZIP'] .'">';
+                      }
+                      ?>
+
                    </div>
                  </div>
                </div>
@@ -87,6 +118,9 @@
                    <i class="fa fa-cc-mastercard" style="color:red;"></i>
                    <i class="fa fa-cc-discover" style="color:orange;"></i>
                  </div>
+                 <div id="card">
+
+
                  <label for="cname">Name on Card</label>
                  <input type="text" id="cname" name="cardname"placeholder="Pedro Penduko" required="required">
                     <br><br>
@@ -99,7 +133,7 @@
                  <div class="row">
                    <div class="col-50">
                      <label for="expyear">Exp Year</label>
-                     <input type="date" id="expyear" name="expyear" placeholder="2018" required="required">
+                     <input type="year" id="expyear" name="expyear" placeholder="2018" required="required">
                    </div>
                    <div class="col-50">
                      <label for="cvv">CVV</label>
@@ -107,7 +141,7 @@
                    </div>
                  </div>
                </div>
-
+               </div>
              </div>
 
              <input type="submit" value="Continue to checkout" name ="checkoutsubmit" class="btn btn-primary">
@@ -115,30 +149,8 @@
            </form>
          </div>
        </div>
-       <div class="col-25">
-
-
-       <!-- <?php
-      // if(!empty($_SESSION["shopping_cart"]))
-       {
-        //  $total = 0;
-        //  foreach($_SESSION["shopping_cart"] as $keys => $values)
-          {
-        // ?>
-         <div class="container">
-           <h4>Cart <span class="price" style="color:black">
-           <i class="fa fa-shopping-cart"></i>Price</span></h4>
-        //   <p>//<?php echo $values["item_name"];?><span class="price">$ <?php echo $values["item_price"]; ?> </span></p>
-           <?php
-           }
-            ?>
-         </div>
-       </div>
     </div>
-  <?php
 
-  }
-   ?>
 
 <?php
 require_once('view-comp/footer.php');

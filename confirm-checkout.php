@@ -65,9 +65,19 @@
 
 
           $row = $result -> fetch_assoc();
+          $MOP = $_POST['radiobutton'];
         ?>
            <h5>Will Be Delivery To:</h5>
            <h7 class="text-danger" style="text-align:center;"><?php echo $row ['ADDRESS']; echo ' '. $row ['CITY']; echo ' '. $row['PROVINCE']; echo ' '.$row['ZIP']; ?></h7>
+           <?php
+            if(isset($_POST['checkoutsubmit'])){
+              if(isset($_POST['radiobutton'])){
+                echo '<br>';
+                echo "You have selected for mode of payment is: " .$_POST['radiobutton'];
+              }
+            }
+            ?>
+            
         <?php
 
           echo '</div>';

@@ -1,3 +1,7 @@
+<?php
+require_once('../service/service-logs.php');
+ ?>
+
 <html>
   <head>
     <meta charset="utf-8">
@@ -50,6 +54,7 @@
                   echo '<p><center><font size="10">You have successfully registered a new account!</font></center></p>';
                   echo '<p><center>You can now sign-in! </center></p>';
                   echo '<center><i class="fas fa-check-circle fa-7x" style="color:green"></i></center>';
+                  registerLogs();
                 } else {
 
                   echo '<script>alert("Invalid Email Address")</script>';

@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once('../resources/db-properties.php');
+require_once('../service/service-logs.php');
 
 
 
@@ -27,6 +28,7 @@ require_once('../resources/db-properties.php');
     $hasedPassword = hash('sha512',$password);
     $stmt->bind_param('ssi', $username, $hasedPassword, $isActive);
     $stmt->execute();
+    loginLogs();
     $result = $stmt->get_result();
     //fetch_assoc pointer
     if ($result->fetch_assoc()) {
@@ -41,5 +43,6 @@ require_once('../resources/db-properties.php');
   } catch (Exception $e) {
     header('Location: ../front-page.php?error='.$e->getMessage());
   }
+
 
  ?>

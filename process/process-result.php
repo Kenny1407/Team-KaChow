@@ -1,9 +1,10 @@
 <?php
 
   require_once('../view-comp/header.php');
+  require_once('../resources/db-properties.php');
 ?>
 <div class="card-header">
-  Book Results
+  Product Result
 </div>
 <div class="card-body">
   <?php
@@ -12,6 +13,7 @@
 
 
     $searchTerm = $_POST['searchTerm'];
+
 
     try {
       if (!$searchTerm) {
@@ -29,28 +31,18 @@
       }
 
 
-      $query = 'SELECT
-          WHERE  LIKE \'%'.$searchTerm.'%\';';
-
-
+      $query = "SELECT * FROM product_table WHERE NAME LIKE '%$searchTerm%'";
       $result = $db->query($query);
 
       $resultCount = $result->num_rows;
-
-      echo '<p>Result for ' .$searchTerm. '<br>';
-      echo '<p>Number of Product found: '. $resultCount;
-
-
-
-
 
       echo '<div class="row">';
       for ($ctr = 0; $ctr < $resultCount; $ctr++) {
         $row = $result -> fetch_assoc();
       ?>
-        <div class="card col-4 mx-1">
+        <div class="card col-2 mx-1">
           <div class="card-body">
-            <img class="my-3" src="<?php echo $row ['pic_url']; ?>" width="200 rem" alt="Product">
+            <img class="my-2" src="../images/<?php echo $row ['pic_url']; ?>" width="200 rem" alt="Product">
             <h6><?php echo $row['NAME'];?></h6>
             <p>
               <?php echo $row['PRICE']?>
@@ -65,6 +57,6 @@
     }
   ?>
   <br/>
-  <a class="btn btn-secondary" href="index.php">Go Back</a>
+  <a class="btn btn-secondary" href="../index.php">Go Back</a>
 </div>
 <?php require_once('../view-comp/footer.php');?>

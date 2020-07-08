@@ -15,8 +15,8 @@ if(isset($_POST["add_to_cart"]))
 				'item_id'			=>	$_GET["id"],
 				'item_name'			=>	$_POST["hidden_name"],
 				'item_price'		=>	$_POST["hidden_price"],
-				'item_quantity'		=>	$_POST["quantity"],
-        'item_image' => $_POST ["hidden_image"]
+				'item_quantity'		=>	$_POST["quantity"]
+
 			);
 			array_push($_SESSION['shopping_cart'], $item_array);
       echo '<script>alert("Item is Added to the cart")</script>';
@@ -33,10 +33,9 @@ if(isset($_POST["add_to_cart"]))
 			'item_id'			=>	$_GET["id"],
 			'item_name'			=>	$_POST["hidden_name"],
 			'item_price'		=>	$_POST["hidden_price"],
-			'item_quantity'		=>	$_POST["quantity"],
-      'item_image' => $_POST ["hidden_image"]
+			'item_quantity'		=>	$_POST["quantity"]
 		);
-		array_push($_SESSION['shopping_cart'], $item_array);
+		$_SESSION["shopping_cart"][0] = $item_array;
 	}
 }
 
@@ -59,11 +58,11 @@ if(isset($_GET["action"]))
 
 
  <div class="container"style="width: 100%; height:50px;">
-     <form action="../process/process-result.php" method="post">
+     <form action="process/process-result.php" method="post">
        <div class="form-group" style=" display: flex; width: 100%; margin-bottom: 15px;">
          <label for="searchTerm"></label>
          <button class="btn" style="padding: 10px; background: dodgerblue; color: white; min-width: 50px; text-align: center;"><i class="fas fa-search"></i></button>
-         <input type="text" id="searchTerm" name="searchTerm" class="form-control" placeholder="Search in (Company Name)"/>
+         <input type="text" id="searchTerm" name="searchTerm" class="form-control" placeholder="Search in KaChow"/>
          <a href="add-to-cart.php" class="btn btn-primary">Cart</a>
    </div>
      </form>
@@ -95,7 +94,8 @@ if(isset($_GET["action"]))
      <form method="post" action="product-details.php?id=<?php echo $row["ID"]; ?>">
        <div class="card" style="margin-left:40px; left:30%; border-radius: 30px; border: 5px; border-color:black; border-style:solid; position: auto;">
          <div class="card-body" style="height:450px;">
-          <a href="product-details.php?id=<?php echo $row["ID"]; ?>"><img style="height:300px; width:300px;" name= "hidden_image"src="images/<?php echo $row ['pic_url']; ?>" width="200 rem" alt="Product" class="img-responsive"></a>
+          <a href="product-details.php?id=<?php echo $row["ID"]; ?>"><img style="height:300px; width:300px;" src="images/<?php echo $row ['pic_url']; ?>"
+						 width="200 rem" alt="Product" class="img-responsive"></a>
            <h4 style="text-align:center;" class="text-info"><?php echo $row['NAME'];?></h6>
            <h5 class="text-danger" style="text-align:center;">$ <?php echo $row ['PRICE']; ?></h5>
             <center><input type="submit" style="margin-top: 5px;" class="btn btn-success" value="Product Details"></center>

@@ -1,5 +1,5 @@
 <?php
-require_once('service/order-service.php');
+require_once('service/service-logs.php');
 require_once('model/user_info.php');
 
 
@@ -74,8 +74,7 @@ require_once('model/user_info.php');
              </div>
              <div class="form-group" style="text-align:center;">
                <label for=""><b>Password:  </b></label>
-               <input class="form-control" type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" placeholder="Password"
+               <input class="form-control" type="password" id="password" name="password"  placeholder="Password"
                 required autofocus style="text-align:center;">
              </div>
              <div class="form-group" style="text-align:center;">
