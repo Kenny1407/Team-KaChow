@@ -14,7 +14,7 @@
       }
 
 
-      $query = $query = "SELECT * FROM user_info ORDER BY ID ASC";
+      $query = $query = "SELECT * FROM user_info WHERE USERNAME='".$_SESSION['username']."'";
       $result = $db->query($query);
 
       $resultCount = $result->num_rows;
@@ -102,7 +102,7 @@ submitForms = function(){
                 </div>
               </div>
 
-              
+
 
              <input type="submit" value="Continue to checkout" name ="checkoutsubmit" onclick="submitForms()" class="btn btn-primary">
              <a href="product-page.php" class="btn btn-secondary">Continue Shopping</a>
