@@ -61,6 +61,6 @@
     }
   ?>
   <br/>
-  <a class="btn btn-secondary" href="../landing-page.php">Go Back</a>
+  <a class="btn btn-secondary" href="../index.php">Go Back</a>
 </div>
 <?php require_once('../view-comp/footer.php');?>
