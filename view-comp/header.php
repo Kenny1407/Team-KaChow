@@ -31,7 +31,7 @@
   </head>
     <body>
       <div class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div href="index.php" class="navbar-brand">Company title</div>
+        <div href="index.php" class="navbar-brand">KaChowMerce</div>
         <div class="collaps navbar-collapse">
           <ul class="navbar-nav" style="margin-left: 1220px;">
             <li>

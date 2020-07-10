@@ -19,7 +19,7 @@
               $city = $_POST['city'];
               $province = $_POST['province'];
               $zip = $_POST['zip'];
-              $MOP = $_POST['radiobutton'];
+            
 
               // checking if the input is complete or no
 

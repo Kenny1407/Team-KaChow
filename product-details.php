@@ -89,8 +89,8 @@ if(isset($_GET["action"]))
           <img style="height:300px; width:300px;" src="images/<?php echo $row ['pic_url']; ?>" width="200 rem" alt="Product" class="img-responsive">
            <h4 style="text-align:center;" class="text-info"><?php echo $row['NAME'];?></h6>
            <h5 class="text-danger" style="text-align:center;">$ <?php echo $row ['PRICE']; ?></h5>
-           <input type="number" name="quantity" value="1"  minlength="1" maxlength="10">
-           <input type="hidden" name="hidden_image" value="/images<?php echo $row['pic_url']; ?>">
+           <center><input type="number" name="quantity" value="1"  min="1" max="10" style="width:150px;"></center>
+           <input type="hidden" name="hidden_image" value="images/<?php echo $row['pic_url']; ?>">
            <input type="hidden" name="hidden_name" value="<?php echo $row['NAME']; ?>">
            <input type="hidden" name="hidden_price" value="<?php echo $row['PRICE']; ?>">
            <center><input type="submit" name="add_to_cart" style="margin-top: 5px;" class="btn btn-warning" value="Add to cart"></center>

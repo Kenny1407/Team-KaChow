@@ -1,5 +1,5 @@
 <?php
-  session_start();
+
 
 
   define ('DOCUMENT_ROOT', $_SERVER['DOCUMENT_ROOT']);
@@ -40,13 +40,11 @@ function loginLogs () {
       fwrite($file, $outputString, strlen($outputString));
       fclose($file);
 }
-
-
 function checkoutLogs () {
 
   $date = date('H:i, jS F Y');
   $ipAddress = $_SERVER['REMOTE_ADDR'];
-  $username = $_POST['username'];
+  $username = $_SESSION ['username'];
 
   $outputString = $date."\t"
   .$ipAddress. " - \t"
@@ -59,6 +57,7 @@ function checkoutLogs () {
       fwrite($file, $outputString, strlen($outputString));
       fclose($file);
 }
+
 
 
 

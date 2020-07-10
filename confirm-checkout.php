@@ -1,8 +1,10 @@
 <?php
   require_once('view-comp/header.php');
   require_once('resources/db-properties.php');
+  require_once('service/service-logs.php');
 
  ?>
+
 
 <h2 style="text-align:center">Checkout Summary</h2>
 <div class="container" style="border-style:solid; height:60%;" >
@@ -60,6 +62,7 @@
 
         $query = $query = "SELECT * FROM user_info";
         $result = $db->query($query);
+        checkoutLogs();
 
         $resultCount = $result->num_rows;
 
@@ -77,7 +80,10 @@
               }
             }
             ?>
-            
+            <br><br><br><br><br><br>
+            <a class="btn btn-info" href="check-out.php">Cancel</a>
+             <a  class="btn btn-success "href="confirmed-out.php" style="float:right;" onclick="checkoutLogs()">Confirm</a>
+
         <?php
 
           echo '</div>';

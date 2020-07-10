@@ -74,8 +74,8 @@ require_once('model/user_info.php');
              </div>
              <div class="form-group" style="text-align:center;">
                <label for=""><b>Password:  </b></label>
-               <input class="form-control" type="password" id="password" name="password"  placeholder="Password"
-                required autofocus style="text-align:center;">
+               <input class="form-control" type="password" id="password" name="password"  placeholder="Password"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+               title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" required autofocus style="text-align:center;">
              </div>
              <div class="form-group" style="text-align:center;">
                <label for="">First Name:  </b></label>
