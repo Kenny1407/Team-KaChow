@@ -124,30 +124,30 @@ submitForms = function(){
 
 
                  <label for="cname">Name on Card</label>
-                 <input type="text" id="cname" name="cardname"placeholder="Pedro Penduko" required="required">
+                 <input type="text" id="cname" name="cardname"placeholder="Pedro Penduko">
                     <br><br>
                  <label for="ccnum">Credit card number</label>
-                 <input type="tel" inputmode="numeric" id="ccnum" name="cardnumber" pattern="[0-9\s]{13,19}" placeholder="xxxx xxxx xxxx xxxx" required="required">
+                 <input type="tel" inputmode="numeric" id="ccnum" name="cardnumber" pattern="[0-9\s]{13,19}" placeholder="xxxx xxxx xxxx xxxx" >
                  <br><br><br>
                  <label for="expmonth">Exp Month</label>
-                 <input type="text" id="expmonth" name="expmonth" placeholder="September" required="required">
+                 <input type="text" id="expmonth" name="expmonth" placeholder="September" >
                  <br><br><br>
                  <div class="row">
                    <div class="col-50">
                      <label for="expyear">Exp Year</label>
-                     <input type="year" id="expyear" name="expyear" placeholder="2022" required="required">
+                     <input type="year" id="expyear" name="expyear" placeholder="2022">
                    </div>
                    <div class="col-50">
                      <label for="cvv">CVV</label>
-                     <input type="text" id="cvv" name="cvv" placeholder="352" required="required">
+                     <input type="text" id="cvv" name="cvv" placeholder="352" >
                    </div>
                  </div>
                </div>
                </div>
              </div>
 
-             <input type="submit" value="Continue to checkout" name ="checkoutsubmit" onclick="submitForms()" class="btn btn-primary">
-             <a href="index.php" class="btn btn-secondary">Continue Shopping</a>
+             <input type="submit" value="Continue to checkout" name ="checkoutsubmit"  onclick="submitforms()" class="btn btn-primary">
+             <a href="product-page.php" class="btn btn-secondary">Continue Shopping</a>
            </form>
          </div>
        </div>

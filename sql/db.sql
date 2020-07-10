@@ -35,7 +35,7 @@ INSERT INTO product_table (name, price, id) VALUES
 
 
 ALTER TABLE product_table ADD COLUMN pic_url VARCHAR(255);
-UPDATE product_table SET pic_url = 'razerlaptop1.png' WHERE id = 1;
-UPDATE product_table SET pic_url = 'omenlaptop.png' WHERE id = 2;
-UPDATE product_table SET pic_url = 'lenovolaptop.png' WHERE id = 3;
-UPDATE product_table SET pic_url = 'predatorlaptop.png' WHERE id = 4;
+UPDATE product_table SET pic_url = 'images/razerlaptop1.png' WHERE id = 1;
+UPDATE product_table SET pic_url = 'images/omenlaptop.png' WHERE id = 2;
+UPDATE product_table SET pic_url = 'images/lenovolaptop.png' WHERE id = 3;
+UPDATE product_table SET pic_url = 'images/predatorlaptop.png' WHERE id = 4;

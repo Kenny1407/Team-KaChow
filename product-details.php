@@ -23,7 +23,7 @@ if(isset($_POST["add_to_cart"]))
 			);
 			$_SESSION["shopping_cart"][$count] = $item_array;
       echo '<script>alert("Item Has Been Added")</script>';
-      echo '<script>window.location="index.php"</script>';
+      echo '<script>window.location="product-page.php"</script>';
 		}
 		else
 		{
@@ -95,7 +95,7 @@ if(isset($_GET["action"]))
            <input type="hidden" name="hidden_price" value="<?php echo $row['PRICE']; ?>">
            <center><input type="submit" name="add_to_cart" style="margin-top: 5px;" class="btn btn-warning" value="Add to cart"></center>
            <br>
-           <center><a href="index.php" class="btn btn-info">Go Back</a></center>
+           <center><a href="product-page.php" class="btn btn-info">Go Back</a></center>
          </div>
        </div>
      </form>

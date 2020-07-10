@@ -14,7 +14,7 @@ function registerLogs () {
     .$ipAddress. " - \t"
     .$username."\r\n";
 
-    $file = @ fopen(DOCUMENT_ROOT.'/Team-KaChow/resources/registration.txt', 'ab');
+    $file = @ fopen(DOCUMENT_ROOT.'/botboy/Team-KaChow/resources/registration.txt', 'ab');
 
 
 
@@ -33,7 +33,7 @@ function loginLogs () {
   .$ipAddress. " - \t"
   .$username."\r\n";
 
-  $file = @ fopen(DOCUMENT_ROOT.'/Team-KaChow/resources/login.txt', 'ab');
+  $file = @ fopen(DOCUMENT_ROOT.'/botboy/Team-KaChow/resources/login.txt', 'ab');
 
 
 
@@ -50,7 +50,7 @@ function checkoutLogs () {
   .$ipAddress. " - \t"
   .$username."\r\n";
 
-  $file = @ fopen(DOCUMENT_ROOT.'/Team-KaChow/resources/checkout.txt', 'ab');
+  $file = @ fopen(DOCUMENT_ROOT.'/botboy/Team-KaChow/resources/checkout.txt', 'ab');
 
 
 
