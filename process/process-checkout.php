@@ -19,7 +19,8 @@
               $city = $_POST['city'];
               $province = $_POST['province'];
               $zip = $_POST['zip'];
-            
+              
+
 
               // checking if the input is complete or no
 
@@ -37,11 +38,12 @@
                   // must be the name name in the db.sql
                   //WHERE id='".$_GET['id']."' "
                 // $query =  "SELECT * FROM user_info";
-                $query = "UPDATE user_info SET ADDRESS = ?, CITY = ?, PROVINCE = ?, ZIP = ?";
+                $query = "UPDATE user_info SET ADDRESS = ?, CITY = ?, PROVINCE = ?, ZIP = ? ";
                 $stmt = $db->prepare($query);
                 $stmt->bind_param("ssss", $address, $city,$province,$zip);
                   $stmt->execute();
-                  echo '<script>window.location="../confirm-checkout.php"</script>';
+                  echo '<script>window.location="../mode-of-payment.php"</script>';
+
                 $stmt->close();
 
               } catch (Exception $e) {

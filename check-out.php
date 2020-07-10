@@ -36,6 +36,7 @@ echo $e->getMessage();
 submitForms = function(){
   document.getElementById("form1").submit();
   document.getElementById("form2").submit();
+  return true;
  }
 
 </script>
@@ -49,17 +50,8 @@ submitForms = function(){
 
                <div class="col-50">
                  <div class="form-group" style="display:inline-block">
-                  <h4>Payment Option</h4>
-                  <img src="images/codimage2.png" alt="Photo" style="height:70px; margin-left:20px;">
-                  <img src="images/creditcard.png" alt="Photo" style="height:90px; margin-left:50px;">
-                  <br>
-                <form action="confirm-checkout.php" id="form1" method="post">
-                <input type="radio" name="radiobutton" id="radiocheck1"  style="margin-left:40px;" value="COD">
-                <input type="radio" name="radiobutton" id="radiocheck2" style="margin-left:128px;" value="CREDIT">
-                  <br>
                  <form action="process/process-checkout.php" id="form2" method="post">
-                  <span>Cash On Delivery</span>
-                  <span style="margin-left:25px;">Credit Card</span>
+
                 </div>
                 <h3>Billing Information</h3>
                  <label for="fname"><i class="fa fa-user"></i> Full Name</label>
@@ -110,6 +102,7 @@ submitForms = function(){
                 </div>
               </div>
 
+<<<<<<< HEAD
                <div class="col-50">
                  <br><br><br>
                  <h3>Payment</h3>
@@ -147,6 +140,11 @@ submitForms = function(){
              </div>
 
              <input type="submit" value="Continue to checkout" name ="checkoutsubmit"  onclick="submitforms()" class="btn btn-primary">
+=======
+              
+
+             <input type="submit" value="Continue to checkout" name ="checkoutsubmit" onclick="submitForms()" class="btn btn-primary">
+>>>>>>> origin/master
              <a href="product-page.php" class="btn btn-secondary">Continue Shopping</a>
            </form>
          </div>

@@ -60,7 +60,7 @@
         }
 
 
-        $query = $query = "SELECT * FROM user_info";
+        $query = $query = "SELECT * FROM user_info WHERE USERNAME='".$_SESSION['username']."' ";
         $result = $db->query($query);
         checkoutLogs();
 
@@ -72,14 +72,9 @@
         ?>
            <h5>Will Be Delivery To:</h5>
            <h7 class="text-danger" style="text-align:center;"><?php echo $row ['ADDRESS']; echo ' '. $row ['CITY']; echo ' '. $row['PROVINCE']; echo ' '.$row['ZIP']; ?></h7>
-           <?php
-            if(isset($_POST['checkoutsubmit'])){
-              if(isset($_POST['radiobutton'])){
-                echo '<br>';
-                echo "You have selected for mode of payment is: " .$_POST['radiobutton'];
-              }
-            }
-            ?>
+           <br>
+           <h8> You have selected: <?php echo $_POST['radiobutton'];?></h8>
+
             <br><br><br><br><br><br>
             <a class="btn btn-info" href="check-out.php">Cancel</a>
              <a  class="btn btn-success "href="confirmed-out.php" style="float:right;" onclick="checkoutLogs()">Confirm</a>
