@@ -59,7 +59,9 @@ require_once('view-comp/header.php');
           </div>
         </div>
       </div>
-      <center><input type="submit" name="MOD" value="Submit" class="btn btn-primary"></center>
+      <center><a href="check-out.php" class="btn btn-secondary">Go Back</a>
+        <input type="submit" name="MOD" value="Submit" class="btn btn-primary">
+          </center>
       </form>
       </div>
       <br>

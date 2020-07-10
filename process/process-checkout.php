@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require_once('../resources/db-properties.php');
  ?>
 
@@ -19,7 +20,7 @@
               $city = $_POST['city'];
               $province = $_POST['province'];
               $zip = $_POST['zip'];
-              
+
 
 
               // checking if the input is complete or no
@@ -38,7 +39,15 @@
                   // must be the name name in the db.sql
                   //WHERE id='".$_GET['id']."' "
                 // $query =  "SELECT * FROM user_info";
-                $query = "UPDATE user_info SET ADDRESS = ?, CITY = ?, PROVINCE = ?, ZIP = ? ";
+                  $query1 = "SELECT * FROM user_info";
+                  $result = $db->query($query1);
+                  $row = $result -> fetch_assoc();
+                  $resultCount = $result->num_rows;
+                  for ($ctr = 0; $ctr < $resultCount; $ctr++){
+                    $row = $result -> fetch_assoc();
+                      }
+
+                $query = "UPDATE user_info SET ADDRESS = ?, CITY = ?, PROVINCE = ?, ZIP = ? WHERE USERNAME='".$_SESSION['username']."'";
                 $stmt = $db->prepare($query);
                 $stmt->bind_param("ssss", $address, $city,$province,$zip);
                   $stmt->execute();
