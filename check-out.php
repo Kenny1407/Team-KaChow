@@ -147,7 +147,7 @@ submitForms = function(){
              </div>
 
              <input type="submit" value="Continue to checkout" name ="checkoutsubmit" onclick="submitForms()" class="btn btn-primary">
-             <a href="index.php" class="btn btn-secondary">Continue Shopping</a>
+             <a href="product-page.php" class="btn btn-secondary">Continue Shopping</a>
            </form>
          </div>
        </div>

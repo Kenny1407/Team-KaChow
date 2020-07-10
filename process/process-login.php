@@ -34,7 +34,7 @@ require_once('../service/service-logs.php');
     if ($result->fetch_assoc()) {
       $_SESSION['username'] = $username;
       //if there something fetched redirected to the location
-      header('Location: ../index.php');
+      header('Location: ../product-page.php');
     }else {
       //if none throw exception
       throw new Exception('Incorrect Credentials');
