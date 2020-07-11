@@ -11,8 +11,8 @@ require_once('view-comp/header.php');
  <br>
 <form action="confirm-checkout.php" method="post">
 
-      <input type="radio" name="radiobutton" id="radiocheck1"  checked onclick="show(1)" style="margin-right:50px;" value="COD">
-      <input type="radio" name="radiobutton" id="radiocheck2" onclick="show(0)" style="margin-left:80px;" value="CREDIT" autofocus>
+      <input type="radio" name="radiobutton" id="radiocheck1"   onclick="show(1)" style="margin-right:50px;" value="COD">
+      <input type="radio" name="radiobutton" id="radiocheck2" checkedonclick="show(0)" style="margin-left:80px;" value="CREDIT" autofocus>
       <br>
       <span>Cash On Delivery</span>
       <span style="margin-left:25px;">Credit Card</span>
