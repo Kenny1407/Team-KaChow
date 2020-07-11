@@ -27,6 +27,7 @@ require_once('../service/service-logs.php');
               $lastname = $_POST['lastname'];
               $middlename = $_POST['middlename'];
               $email = $_POST['email'];
+              $suffix = $_POST['suffixname'];
 
               // checking if the input is complete or no
               try {
@@ -41,14 +42,22 @@ require_once('../service/service-logs.php');
                 if ($dbError) {
                   throw new Exception('Could not connect to db');
                 }
+
+                $sql_u ="SELECT *FROM user_info WHERE USERNAME = '$username'";
+                $res_u = mysqli_query($db, $sql_u);
+                if(mysqli_num_rows($res_u) > 0){
+                  $name_error = "Sorry. The username is already taken.";
+                  echo '<script>alert("Sorry. The username is already taken.")</script>';
+                  echo '<script>window.location="../front-page.php"</script>';
+                }else {
                   //inserting new registered user to db
                   // must be the name name in the db.sql
-                $query = "insert into user_info (USERNAME, PASSWORD, FIRST_NAME, LAST_NAME, MIDDLE_NAME,EMAIL_ADDRESS ,active) values (?,?,?,?,?,?,?)";
+                $query = "insert into user_info (USERNAME, PASSWORD, FIRST_NAME, LAST_NAME, MIDDLE_NAME,EMAIL_ADDRESS,SUFFIX_NAME ,active) values (?,?,?,?,?,?,?,?)";
                 $stmt = $db->prepare($query);
                 //hashed password
                 $hasedPassword = hash('sha512', $password);
                 $isActive = true;
-                $stmt->bind_param("ssssssi", $username, $hasedPassword,$firstname, $lastname, $middlename, $email,$isActive);
+                $stmt->bind_param("sssssssi", $username, $hasedPassword,$firstname, $lastname, $middlename, $email,$suffix,$isActive);
                 if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
                   $stmt->execute();
                   echo '<p><center><font size="10">You have successfully registered a new account!</font></center></p>';
@@ -62,6 +71,8 @@ require_once('../service/service-logs.php');
                 }
 
                 $stmt->close();
+
+                }
 
 
 

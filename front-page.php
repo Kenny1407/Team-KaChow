@@ -56,7 +56,7 @@ require_once('model/user_info.php');
        <?php } ?>
      </form>
 
-     <div class="container" style="width: 30%; height:640px; border-style:ridge; background-color: white; padding: 5px; margin-right: 50px; float:right;">
+     <div class="container" style="width: 30%; height:740px; border-style:ridge; background-color: white; padding: 5px; margin-right: 50px; float:right;">
        <div class="card-title">
          <center><h2>No Account Yet?</h2>
          <h4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSign up now!</h4>
@@ -84,6 +84,8 @@ require_once('model/user_info.php');
                <input class="form-control"type="text" name="lastname" id="lastname" placeholder="Last Name" required autofocus style="text-align:center;">
                <label for=""><b>Middle Name:  </b></label>
                <input class="form-control"type="text" name="middlename" id="middlename" placeholder="Middle Name" required autofocus style="text-align:center;">
+               <label for=""><b>Suffix Name:  </b></label>
+               <input class="form-control"type="text" name="suffixname" id="suffixname" placeholder="Suffix Name" required autofocus style="text-align:center;">
              </div>
              <div class="form-group">
                <center><button type="submit" class="btn btn-primary">Register</button></center>
