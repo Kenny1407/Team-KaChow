@@ -44,10 +44,15 @@ require_once('../service/service-logs.php');
                 }
 
                 $sql_u ="SELECT *FROM user_info WHERE USERNAME = '$username'";
+                $sql_e ="SELECT *FROM user_info WHERE EMAIL_ADDRESS = '$email'";
                 $res_u = mysqli_query($db, $sql_u);
+                $res_e = mysqli_query($db, $sql_e);
                 if(mysqli_num_rows($res_u) > 0){
                   $name_error = "Sorry. The username is already taken.";
                   echo '<script>alert("Sorry. The username is already taken.")</script>';
+                  echo '<script>window.location="../front-page.php"</script>';
+                } else if (mysqli_num_rows($res_e) > 0) {
+                  echo '<script>alert("Sorry. The email is already taken.")</script>';
                   echo '<script>window.location="../front-page.php"</script>';
                 }else {
                   //inserting new registered user to db
