@@ -43,8 +43,8 @@ submitForms = function(){
 
 
      <div class="row">
-       <div class="col-75">
-         <div class="container">
+       <div style="margin-left:290px; ">
+         <div class="container" style="background: white; border-style: none;">
 
              <div class="row">
 

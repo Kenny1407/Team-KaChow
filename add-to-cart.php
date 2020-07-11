@@ -5,8 +5,8 @@
 
  <div style="clear:both"></div>
      <br />
-     <h3>Order Details</h3>
-     <div class="table-responsive">
+     <h3><center>Order Details</center></h3>
+     <div class="table-responsive" style="padding: 20px;">
        <table class="table table-bordered">
          <tr>
            <th width="30%">Item Name</th>

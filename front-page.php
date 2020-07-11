@@ -32,7 +32,7 @@ require_once('model/user_info.php');
       <form class="form-signin" action="process/process-login.php" method="post">
         <div class="navbar navbar-expand-lg navbar-dark bg-dark">
           <!-- Logo here if we have logo now -->
-          <div href="index.php" class="navbar-brand">Company title</div>
+          <div href="index.php" class="navbar-brand">KaChowMerce</div>
           <div class="collaps navbar-collapse">
             <ul class="navbar-nav" style="margin-left: 750px;">
               <!-- Login form -->
@@ -83,9 +83,9 @@ require_once('model/user_info.php');
                <label for=""><b>Last Name: </b></label>
                <input class="form-control"type="text" name="lastname" id="lastname" placeholder="Last Name" required autofocus style="text-align:center;">
                <label for=""><b>Middle Name:  </b></label>
-               <input class="form-control"type="text" name="middlename" id="middlename" placeholder="Middle Name" required autofocus style="text-align:center;">
+               <input class="form-control"type="text" name="middlename" id="middlename" placeholder="Middle Name"  autofocus style="text-align:center;">
                <label for=""><b>Suffix Name:  </b></label>
-               <input class="form-control"type="text" name="suffixname" id="suffixname" placeholder="Suffix Name" required autofocus style="text-align:center;">
+               <input class="form-control"type="text" name="suffixname" id="suffixname" placeholder="Suffix Name"  autofocus style="text-align:center;">
              </div>
              <div class="form-group">
                <center><button type="submit" class="btn btn-primary">Register</button></center>
@@ -94,7 +94,7 @@ require_once('model/user_info.php');
          </div>
        </div>
      </div>
-    \
+
 
 
 

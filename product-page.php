@@ -63,7 +63,7 @@ if(isset($_GET["action"]))
          <label for="searchTerm"></label>
          <button class="btn" style="padding: 10px; background: dodgerblue; color: white; min-width: 50px; text-align: center;"><i class="fas fa-search"></i></button>
          <input type="text" id="searchTerm" name="searchTerm" class="form-control" placeholder="Search in KaChow"/>
-         <a href="add-to-cart.php" class="btn btn-primary">Cart</a>
+         <a href="add-to-cart.php" class="btn btn-warning">Cart</a>
    </div>
      </form>
    </div>
@@ -94,7 +94,7 @@ if(isset($_GET["action"]))
      <form method="post" action="product-details.php?id=<?php echo $row["ID"]; ?>">
        <div class="card" style="margin-left:40px; left:30%; border-radius: 30px; border: 5px; border-color:black; border-style:solid; position: auto;">
          <div class="card-body" style="height:450px;">
-          <a href="product-details.php?id=<?php echo $row["ID"]; ?>"><img style="height:250px; width:250px;" src="images/<?php echo $row ['pic_url']; ?>"
+          <a href="product-details.php?id=<?php echo $row["ID"]; ?>"><img style="height:250px; width:250px;" src="<?php echo $row ['pic_url']; ?>"
 						 width="200 rem" alt="Product" class="img-responsive"></a>
            <h4 style="text-align:center;" class="text-info"><?php echo $row['NAME'];?></h6>
            <h5 class="text-danger" style="text-align:center;">$ <?php echo $row ['PRICE']; ?></h5>

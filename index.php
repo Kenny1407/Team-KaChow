@@ -8,7 +8,7 @@
   </head>
     <body>
 
-       <div class="container"style="width: 100%; height:50px;">
+       <div class="container"style="width: 100%; height:50px; padding: 10px;">
            <form action="process/process-result-landing.php" method="post">
              <div class="form-group" style=" display: flex; width: 100%; margin-bottom: 15px;">
                <label for="searchTerm"></label>
@@ -45,7 +45,7 @@
            <form method="post" action="front-page.php">
              <div class="card" style="margin-left:40px; left:30%; border-radius: 30px; border: 5px; border-color:black; border-style:solid; position: auto;">
                <div class="card-body" style="height:450px;">
-                <a href="front-page.php"><img style="height:250px; width:250px;" src="images/<?php echo $row ['pic_url']; ?>"
+                <a href="front-page.php"><img style="height:250px; width:250px;" src="<?php echo $row ['pic_url']; ?>"
       						 width="200 rem" alt="Product" class="img-responsive"></a>
                  <h4 style="text-align:center;" class="text-info"><?php echo $row['NAME'];?></h6>
                  <h5 class="text-danger" style="text-align:center;">$ <?php echo $row ['PRICE']; ?></h5>
