@@ -46,7 +46,7 @@
       ?>
         <div class="card col-2 mx-1">
           <div class="card-body">
-            <img class="my-2" src="../images/<?php echo $row ['pic_url']; ?>" width="200 rem" alt="Product">
+            <img class="my-2" src="../<?php echo $row ['pic_url']; ?>" width="200 rem" alt="Product">
             <h6><?php echo $row['NAME'];?></h6>
             <p>
               <?php echo $row['PRICE']?>
