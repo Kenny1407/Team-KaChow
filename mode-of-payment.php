@@ -46,7 +46,7 @@ require_once('view-comp/header.php');
         <input type="text" id="cname" name="cardname"placeholder="Pedro Penduko" >
            <br><br>
         <label for="ccnum">Credit card number</label>
-        <input type="tel" inputmode="numeric" id="ccnum" name="cardnumber" pattern="[0-9\s]{13,19}" placeholder="xxxx xxxx xxxx xxxx" >
+        <input type="tel" inputmode="numeric" id="ccnum" name="cardnumber" pattern="[0-9\s]{16}" placeholder="xxxx xxxx xxxx xxxx" >
         <br><br>
         <label for="expmonth">Exp Month</label>
         <input type="text" id="expmonth" name="expmonth" placeholder="September" >

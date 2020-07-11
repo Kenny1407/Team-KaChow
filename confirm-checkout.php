@@ -7,9 +7,9 @@
 
 
 <h2 style="text-align:center">Checkout Summary</h2>
-<div class="container" style="border-style:solid; height:60%;" >
+<div class="container" >
 
-  <div class="table-responsive">
+  <div class="table-responsive" style="padding: 10px;">
     <table class="table table-bordered">
       <tr>
         <th width="40%">Item Name</th>
@@ -70,12 +70,12 @@
           $row = $result -> fetch_assoc();
           $MOP = $_POST['radiobutton'];
         ?>
-           <h5>Will Be Delivery To:</h5>
+           <h5>Delivery address:</h5>
            <h7 class="text-danger" style="text-align:center;"><?php echo $row ['ADDRESS']; echo ' '. $row ['CITY']; echo ' '. $row['PROVINCE']; echo ' '.$row['ZIP']; ?></h7>
            <br>
            <h8> You have selected: <?php echo $_POST['radiobutton'];?></h8>
 
-            <br><br><br><br><br><br>
+            <br><br>
             <a class="btn btn-info" href="check-out.php">Cancel</a>
              <a  class="btn btn-success "href="confirmed-out.php" style="float:right;" onclick="checkoutLogs()">Confirm</a>
 
