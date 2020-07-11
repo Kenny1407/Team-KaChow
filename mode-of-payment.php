@@ -6,21 +6,22 @@ require_once('view-comp/header.php');
  <div class="container" style="text-align:center; border-style:solid;">
 
 
- <img src="images/codimage2.png" alt="Photo" style="height:70px; margin-left:20px;">
- <img src="images/creditcard.png" alt="Photo" style="height:90px; margin-left:50px;">
+
+ <img src="images/creditcard.png" alt="Photo" style="height:90px; margin-right:20px;">
+ <img src="images/codimage2.png" alt="Photo" style="height:70px; margin-left:50px;">
  <br>
 <form action="confirm-checkout.php" method="post">
 
-      <input type="radio" name="radiobutton" id="radiocheck1"   onclick="show(1)" style="margin-right:50px;" value="COD">
-      <input type="radio" name="radiobutton" id="radiocheck2" checkedonclick="show(0)" style="margin-left:80px;" value="CREDIT" autofocus>
+      <input type="radio" name="radiobutton" id="radiocheck1"  checked onclick="show(1)" style="margin-right:50px;" value="CREDIT">
+      <input type="radio" name="radiobutton" id="radiocheck2" onclick="show(0)" style="margin-left:80px;" value="COD" autofocus>
       <br>
-      <span>Cash On Delivery</span>
-      <span style="margin-left:25px;">Credit Card</span>
+      <span>Credit Card</span>
+      <span style="margin-left:25px;">Cash On Delivery</span>
 
 
 <script type="text/javascript">
   function show(x){
-    if(x==0){
+    if(x==1){
       document.getElementById('card').style.display = 'block';
     }else {
       document.getElementById('card').style.display = 'none';
