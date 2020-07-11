@@ -83,9 +83,9 @@ require_once('model/user_info.php');
                <label for=""><b>Last Name: </b></label>
                <input class="form-control"type="text" name="lastname" id="lastname" placeholder="Last Name" required autofocus style="text-align:center;">
                <label for=""><b>Middle Name:  </b></label>
-               <input class="form-control"type="text" name="middlename" id="middlename" placeholder="Middle Name" required autofocus style="text-align:center;">
+               <input class="form-control"type="text" name="middlename" id="middlename" placeholder="Middle Name"  autofocus style="text-align:center;">
                <label for=""><b>Suffix Name:  </b></label>
-               <input class="form-control"type="text" name="suffixname" id="suffixname" placeholder="Suffix Name" required autofocus style="text-align:center;">
+               <input class="form-control"type="text" name="suffixname" id="suffixname" placeholder="Suffix Name"  autofocus style="text-align:center;">
              </div>
              <div class="form-group">
                <center><button type="submit" class="btn btn-primary">Register</button></center>
